@@ -1,15 +1,15 @@
-import express, { Application } from 'express';
+import express, { Application } from "express";
 
-import accessoryRouter from './routes/accessories.route';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import phoneRouter from './routes/phones.route';
-import productRouter from './routes/products.router';
-import { sequelize } from './models';
-import tabletRouter from './routes/tablets.route';
-import userRouter from './routes/users.router';
-import { orderMap } from './models/order';
-import orderRouter from './routes/order.router';
+import accessoryRouter from "./routes/accessories.route";
+import bodyParser from "body-parser";
+import cors from "cors";
+import phoneRouter from "./routes/phones.route";
+import productRouter from "./routes/products.router";
+import { sequelize } from "./models";
+import tabletRouter from "./routes/tablets.route";
+import userRouter from "./routes/users.router";
+import { orderMap } from "./models/order";
+import orderRouter from "./routes/order.router";
 
 const app: Application = express();
 
@@ -23,11 +23,11 @@ orderMap(sequelize);
 sequelize
   .sync()
   .then(() => {
-    app.use('/products', productRouter);
-    app.use('/tablets', tabletRouter);
-    app.use('/accessories', accessoryRouter);
-    app.use('/phones', phoneRouter);
-    app.use('/users', userRouter);
+    app.use("/products", productRouter);
+    app.use("/tablets", tabletRouter);
+    app.use("/accessories", accessoryRouter);
+    app.use("/phones", phoneRouter);
+    app.use("/users", userRouter);
     app.use("/orders", orderRouter);
 
     app.listen(PORT, () => {
@@ -35,5 +35,5 @@ sequelize
     });
   })
   .catch((error: Error) => {
-    console.error('Unable to connect to the database:', error);
+    console.error("Unable to connect to the database:", error);
   });

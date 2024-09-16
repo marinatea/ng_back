@@ -4,7 +4,6 @@ const getAllTablets = async () => {
   return Tablet.findAll();
 };
 
-
 const getTabletById = async (tabletId: string) => {
   return Tablet.findByPk(tabletId);
 };

@@ -1,77 +1,75 @@
-"use strict";
-
-const { STRING, INTEGER, ARRAY, JSONB, DATE } = require('sequelize');
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up: async (queryInterface) => {
+  up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Tablets', {
       id: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
         primaryKey: true,
         allowNull: false,
       },
       category: {
-        type: STRING,
+        type: Sequelize.STRING,
       },
       namespaceId: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       name: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       capacityAvailable: {
-        type: ARRAY(STRING),
+        type: Sequelize.ARRAY(Sequelize.STRING(1024)),
       },
       capacity: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       priceRegular: {
-        type: INTEGER,
+        type: Sequelize.INTEGER,
       },
       priceDiscount: {
-        type: INTEGER,
+        type: Sequelize.INTEGER,
       },
       colorsAvailable: {
-        type: ARRAY(STRING),
+        type: Sequelize.ARRAY(Sequelize.STRING(1024)),
       },
       color: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       images: {
-        type: ARRAY(STRING),
+        type: Sequelize.ARRAY(Sequelize.STRING),
       },
       description: {
-        type: JSONB,
+        type: Sequelize.JSON,
       },
       screen: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       processor: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       resolution: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       ram: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       camera: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       zoom: {
-        type: STRING(1024),
+        type: Sequelize.STRING(1024),
       },
       cell: {
-        type: ARRAY(STRING),
+        type: Sequelize.ARRAY(Sequelize.STRING(1024)),
       },
       createdAt: {
         allowNull: false,
-        type: DATE,
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: DATE,
+        type: Sequelize.DATE,
       },
     });
   },
