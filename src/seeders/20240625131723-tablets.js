@@ -1,6 +1,6 @@
 "use strict";
 
-const { tabletsData } = require('../apiData/tablets.json');
+const tabletsData = require("../apiData/tablets.json").tablet;
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {

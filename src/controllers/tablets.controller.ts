@@ -5,7 +5,6 @@ import tabletService from '../services/tablets.services';
 const getAll: ControllerAction = async (req, res) => {
   try {
     const allTablets = await tabletService.getAllTablets();
-    console.log('Retrieved tablets:', allTablets);
 
     if (!allTablets) {
       res.status(404).json({

@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const { STRING, INTEGER, ARRAY, JSON, DATE } = require('sequelize');
+const { STRING, INTEGER, ARRAY, JSONB, DATE } = require('sequelize');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
         type: STRING(1024),
       },
       capacityAvailable: {
-        type: ARRAY(STRING(1024)),
+        type: ARRAY(STRING),
       },
       capacity: {
         type: STRING(1024),
@@ -33,7 +33,7 @@ module.exports = {
         type: INTEGER,
       },
       colorsAvailable: {
-        type: ARRAY(STRING(1024)),
+        type: ARRAY(STRING),
       },
       color: {
         type: STRING(1024),
@@ -42,7 +42,7 @@ module.exports = {
         type: ARRAY(STRING),
       },
       description: {
-        type: JSON,
+        type: JSONB,
       },
       screen: {
         type: STRING(1024),
@@ -63,7 +63,7 @@ module.exports = {
         type: STRING(1024),
       },
       cell: {
-        type: ARRAY(STRING(1024)),
+        type: ARRAY(STRING),
       },
       createdAt: {
         allowNull: false,

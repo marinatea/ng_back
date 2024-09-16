@@ -1,9 +1,7 @@
 import Tablet from '../models/tablet';
 
 const getAllTablets = async () => {
-  const tablets = await Tablet.findAll();
-  console.log('Tablets retrieved:', tablets);
-  return tablets;
+  return Tablet.findAll();
 };
 
 
