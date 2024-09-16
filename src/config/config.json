@@ -1,12 +1,13 @@
 {
   "development": {
     "dialect": "postgres",
-    "url": "postgresql://admin:B8zK1LF0sA6TF0wkHV3zTP8x7HVxEsuX@dpg-cpsiga56l47c73e66tng-a.frankfurt-postgres.render.com/phone_cataglog",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgresql", 
+    "password": "newpassword",  
+    "database": "data_store",
     "dialectOptions": {
-      "ssl": {
-        "require": true,
-        "rejectUnauthorized": false
-      }
+      "ssl": false
     },
     "modelsPath": "src/models",
     "models": "src/models/*.ts",
