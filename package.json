@@ -6,7 +6,9 @@
     "start": "ts-node src/server.ts",
     "dev": "nodemon src/server.ts",
     "build": "tsc",
-    "lint": "eslint src/**/*.{js,ts}"
+    "lint": "eslint src/**/*.{js,ts}",
+    "seed": "ts-node ./node_modules/.bin/sequelize-cli db:seed:all",
+    "migrate": "ts-node ./node_modules/.bin/sequelize-cli db:migrate"
   },
   "keywords": [],
   "author": "",
@@ -21,19 +23,19 @@
     "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.2.2",
     "sequelize": "^6.37.3",
-    "sequelize-typescript": "^2.1.6",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "sequelize-typescript": "^2.1.6"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
     "@types/cors": "^2.8.17",
-    "@types/node": "^20.14.8",
+    "@types/node": "^20.16.5",
     "@types/sequelize": "^4.28.20",
     "eslint": "^8.56.0",
     "globals": "^15.6.0",
     "nodemon": "^3.1.4",
     "sequelize-cli": "^6.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
     "typescript-eslint": "^7.14.1"
   }
 }

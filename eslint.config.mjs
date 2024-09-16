@@ -11,6 +11,8 @@ export default [
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       'no-undef': 'off',
+      '@typescript-eslint/no-var-requires': 'off',
+
     },
   },
 ];

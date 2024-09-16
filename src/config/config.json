@@ -3,7 +3,7 @@
     "dialect": "postgres",
     "host": "localhost",
     "port": 5432,
-    "username": "postgresql", 
+    "username": "postgres", 
     "password": "newpassword",  
     "database": "data_store",
     "dialectOptions": {

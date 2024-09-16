@@ -1,22 +1,30 @@
-'use strict';
+"use strict";
 
-import { map } from '../apiData/accessories.json';
+const accessoriesData = require("../apiData/accessories.json");
 
 /** @type {import('sequelize-cli').Migration} */
-export async function up(queryInterface) {
-  const transformedAccessoryData = map((tablet) => ({
-    ...tablet,
-    capacityAvailable: tablet.capacityAvailable,
-    colorsAvailable: tablet.colorsAvailable,
-    images: tablet.images,
-    description: JSON.stringify(tablet.description),
-    cell: tablet.cell,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  }));
+module.exports = {
+  up: async (queryInterface) => {
+    const transformedAccessoryData = accessoriesData.map((accessory) => ({
+      ...accessory,
+      capacityAvailable: accessory.capacityAvailable,
+      colorsAvailable: accessory.colorsAvailable,
+      images: accessory.images,
+      description: JSON.stringify(accessory.description),
+      cell: accessory.cell,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }));
 
-  await queryInterface.bulkInsert('Accessories', transformedAccessoryData, {});
-}
-export async function down(queryInterface) {
-  await queryInterface.bulkDelete('Accessories', null, {});
-}
+    await queryInterface.bulkInsert(
+      "Accessories",
+      transformedAccessoryData,
+      {}
+    );
+  },
+
+  down: async (queryInterface) => {
+    // Usuń dane z bazy danych
+    await queryInterface.bulkDelete("Accessories", null, {});
+  },
+};
