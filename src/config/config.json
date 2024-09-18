@@ -2,7 +2,7 @@
   "development": {
     "dialect": "postgres",
     "host": "localhost",
-    "port": 5432,
+    "port": 3000,
     "username": "postgres", 
     "password": "newpassword",  
     "database": "data_store",
