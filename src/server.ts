@@ -11,8 +11,12 @@ import userRouter from "./routes/users.router";
 import { orderMap } from "./models/order";
 import orderRouter from "./routes/order.router";
 
-const app: Application = express();
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Nieobsłużone odrzucenie obietnicy:', reason);
+});
 
+const app: Application = express();
 app.use(bodyParser.json());
 app.use(cors());
 
